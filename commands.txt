@@ -1,0 +1,8 @@
+apt-get install apt-transport-https libsdl2-2.0-0 libwebkitgtk-1.0-0 libpng-dev wget libcurl3 gnupg
+wget http://launchpadlibrarian.net/161405671/libglew1.10_1.10.0-3_amd64.deb
+dpkg -i libglew1.10_1.10.0-3_amd64.deb
+wget -O - https://content.runescape.com/downloads/ubuntu/runescape.gpg.key | apt-key add -
+mkdir -p /etc/apt/sources.list.d
+echo "deb https://content.runescape.com/downloads/ubuntu trusty non-free" > /etc/apt/sources.list.d/runescape.list
+apt-get update
+apt-get -f install -y --allow-unauthenticated runescape-launcher
